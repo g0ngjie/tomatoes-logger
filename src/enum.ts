@@ -1,4 +1,3 @@
-import { Console } from "console";
 /**
  * 日志级别
  *

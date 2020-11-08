@@ -4,7 +4,7 @@
   "description": "log tools",
   "main": "./lib/index.js",
   "scripts": {
-    "test": ""
+    "test": "cd test && yarn serve"
   },
   "repository": "git@gitee.com:gjwork/tomatoes-logger.git",
   "author": "Gj <gongjie@otosaas.com>",
@@ -19,5 +19,6 @@
   ],
   "files": [
     "/lib"
-  ]
+  ],
+  "devDependencies": {}
 }

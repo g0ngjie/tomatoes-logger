@@ -1,6 +1,7 @@
 import { Color, FontSize, Level, WindowLogKey } from "./enum";
 import { ConfigLogger, InitData, LevelLogger, Logger, LogObject } from "./interface";
-import { InfoSet, DebugSet, WarnSet, ErrorSet } from "./config";
+import { InfoSet, DebugSet, WarnSet, ErrorSet, LevelToArray, KeyToLevel } from "./config";
+import helloFunc from "./hello";
 
 const win: any = window
 
@@ -88,36 +89,16 @@ function __toNoneFunc() {
  * @param {string} [prefix]
  */
 export default function logger(prefix?: string): LogObject {
-
   const win: any = window
   const __this: LevelLogger = win[WindowLogKey.PRIVATE_KEY]
-  const { INFO, WARN, DEBUG, ERROR, IMGAGE } = Level
-  if (!__this) {
-    return {
-      [INFO]: __toNoneFunc,
-      [WARN]: __toNoneFunc,
-      [DEBUG]: __toNoneFunc,
-      [ERROR]: __toNoneFunc,
-      [IMGAGE]: __toNoneFunc,
+  const _levelFunc: any = {}
+  if (!__this) LevelToArray.forEach(level => _levelFunc[level] = __toNoneFunc)
+  else LevelToArray.forEach(level => {
+    _levelFunc[level] = function (...msg: any) {
+      __log(prefix, msg, KeyToLevel[level], __this)
     }
-  }
-  return {
-    [INFO]: function (...msg: any) {
-      __log(prefix, msg, INFO, __this)
-    },
-    [WARN]: function (...msg: any) {
-      __log(prefix, msg, WARN, __this)
-    },
-    [DEBUG]: function (...msg: any) {
-      __log(prefix, msg, DEBUG, __this)
-    },
-    [ERROR]: function (...msg: any) {
-      __log(prefix, msg, ERROR, __this)
-    },
-    [IMGAGE]: function (...msg: any) {
-      __log(prefix, msg, IMGAGE, __this)
-    },
-  }
+  })
+  return _levelFunc
 }
 
 /**
@@ -139,11 +120,7 @@ export function init(conf?: InitData): void {
     [Level.ERROR]: ErrorSet,
   }
   win.logger = (prefix?: string) => logger(prefix)
-  if (!conf?.unHello) {
-    console.log("%c---Enjoy using the logger---", " text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:1em");
-    console.log('issues: https://gitee.com/gjwork/tomatoes-common-lib/issues')
-    console.log('NPM: @tomatoes/common-lib')
-  }
+  if (!conf?.unHello) helloFunc()
 }
 
 // console.log("%c3D Text"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");

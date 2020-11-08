@@ -1,4 +1,4 @@
-import { Color, FontSize } from "./enum";
+import { Color, FontSize, Level } from "./enum";
 import { Logger } from "./interface";
 
 export const InfoSet: Logger = {
@@ -23,4 +23,16 @@ export const ErrorSet: Logger = {
   disabled: false,
   color: Color.RED,
   fontSize: FontSize.NORMAL
+}
+
+export const LevelToArray :string[] = [
+  Level.INFO, Level.DEBUG, Level.WARN, Level.ERROR, Level.IMGAGE,
+]
+
+export const KeyToLevel: any = {
+  [Level.DEBUG]: [Level.DEBUG],
+  [Level.INFO]: [Level.INFO],
+  [Level.WARN]: [Level.WARN],
+  [Level.ERROR]: [Level.ERROR],
+  [Level.IMGAGE]: [Level.IMGAGE]
 }
