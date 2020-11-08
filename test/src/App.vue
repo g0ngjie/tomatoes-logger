@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import logger from "../../lib";
+import logger, {config} from "../../lib";
 export default {
   setup() {
     logger().error('haha')
