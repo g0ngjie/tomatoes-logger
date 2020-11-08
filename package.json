@@ -1,7 +1,7 @@
 {
   "name": "@tomatoes/logger",
   "version": "1.0.0",
-  "description": "log tools",
+  "description": "Front end console logging tool",
   "main": "index.js",
   "scripts": {
     "build": "tsc && gulp && rm -rf lib/*.d.ts && mv dist/*.d.ts lib && rm -rf dist",
@@ -16,6 +16,7 @@
   "homepage": "https://gitee.com/gjwork/tomatoes-logger",
   "keywords": [
     "logger",
+    "front-end logger",
     "tomatoes"
   ],
   "files": [
