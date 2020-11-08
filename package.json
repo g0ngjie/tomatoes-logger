@@ -4,6 +4,7 @@
   "description": "log tools",
   "main": "index.js",
   "scripts": {
+    "build": "tsc && gulp && rm -rf lib/*.d.ts && mv dist/*.d.ts lib && rm -rf dist",
     "test": "cd test && yarn serve"
   },
   "repository": "git@gitee.com:gjwork/tomatoes-logger.git",
@@ -20,5 +21,8 @@
   "files": [
     "/lib"
   ],
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
 }
