@@ -1,0 +1,23 @@
+{
+  "name": "@tomatoes/logger",
+  "version": "1.0.0",
+  "description": "log tools",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": "git@gitee.com:gjwork/tomatoes-logger.git",
+  "author": "Gj <gongjie@otosaas.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitee.com/gjwork/tomatoes-logger/issues"
+  },
+  "homepage": "https://gitee.com/gjwork/tomatoes-logger",
+  "keywords": [
+    "logger",
+    "tomatoes"
+  ],
+  "files": [
+    "/lib"
+  ]
+}
