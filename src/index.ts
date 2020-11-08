@@ -1,6 +1,6 @@
 import { Color, FontSize, Level, WindowLogKey } from "./enum";
 import { ConfigLogger, InitConf, LevelLogger, Logger, LogObject } from "./interface";
-import { InfoSet, DebugSet, WarnSet, ErrorSet, LevelToArray, KeyToLevel } from "./config";
+import { InfoSet, DebugSet, WarnSet, ErrorSet } from "./config";
 import helloFunc from "./hello";
 
 const win: any = window
@@ -91,14 +91,33 @@ function __toNoneFunc() {
 export default function logger(prefix?: string): LogObject {
   const win: any = window
   const __this: LevelLogger = win[WindowLogKey.PRIVATE_KEY]
-  const _levelFunc: any = {}
-  if (!__this) LevelToArray.forEach(level => _levelFunc[level] = __toNoneFunc)
-  else LevelToArray.forEach(level => {
-    _levelFunc[level] = function (...msg: any) {
-      __log(prefix, msg, KeyToLevel[level], __this)
+  const { INFO, WARN, DEBUG, ERROR, IMGAGE } = Level
+  if (!__this) {
+    return {
+      [INFO]: __toNoneFunc,
+      [WARN]: __toNoneFunc,
+      [DEBUG]: __toNoneFunc,
+      [ERROR]: __toNoneFunc,
+      [IMGAGE]: __toNoneFunc,
     }
-  })
-  return _levelFunc
+  }
+  return {
+    [INFO]: function (...msg: any) {
+      __log(prefix, msg, INFO, __this)
+    },
+    [WARN]: function (...msg: any) {
+      __log(prefix, msg, WARN, __this)
+    },
+    [DEBUG]: function (...msg: any) {
+      __log(prefix, msg, DEBUG, __this)
+    },
+    [ERROR]: function (...msg: any) {
+      __log(prefix, msg, ERROR, __this)
+    },
+    [IMGAGE]: function (...msg: any) {
+      __log(prefix, msg, IMGAGE, __this)
+    },
+  }
 }
 
 /**
@@ -109,7 +128,6 @@ export default function logger(prefix?: string): LogObject {
  */
 export function init(conf?: InitConf): void {
   win[WindowLogKey.PRIVATE_KEY] = {
-    // default setting
     disabled: conf?.disabled,
     prefix: conf?.prefix || '',
     color: Color.BLACK,
@@ -122,7 +140,3 @@ export function init(conf?: InitConf): void {
   win.logger = (prefix?: string) => logger(prefix)
   if (!conf?.unHello && !conf?.disabled) helloFunc()
 }
-
-// console.log("%c3D Text"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
-
-// console.log('%cRainbow Text ', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:5em;');
