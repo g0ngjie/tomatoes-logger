@@ -1,9 +1,8 @@
 {
   "name": "@tomatoes/logger",
-  "version": "1.0.4",
+  "version": "1.0.2",
   "description": "Front end console logging tool",
   "main": "./lib/index.js",
-  "typings": "./types.d.ts",
   "scripts": {
     "build": "tsc && gulp && rm -rf lib/*.d.ts && mv dist/*.d.ts lib && rm -rf dist",
     "test": "cd test && yarn serve"
@@ -21,8 +20,7 @@
     "tomatoes"
   ],
   "files": [
-    "lib",
-    "types/*.d.ts"
+    "/lib"
   ],
   "devDependencies": {
     "gulp": "^4.0.2",
