@@ -23,8 +23,10 @@ export interface LogObject {
   [Level.IMGAGE]?: any,
 }
 
-export interface InitData {
-  unHello?: boolean
+export interface InitConf {
+  unHello?: boolean,
+  disabled?: boolean,
+  prefix?: string,
 }
 
 export interface ConfigLogger {

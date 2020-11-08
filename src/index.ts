@@ -1,5 +1,5 @@
 import { Color, FontSize, Level, WindowLogKey } from "./enum";
-import { ConfigLogger, InitData, LevelLogger, Logger, LogObject } from "./interface";
+import { ConfigLogger, InitConf, LevelLogger, Logger, LogObject } from "./interface";
 import { InfoSet, DebugSet, WarnSet, ErrorSet, LevelToArray, KeyToLevel } from "./config";
 import helloFunc from "./hello";
 
@@ -105,13 +105,13 @@ export default function logger(prefix?: string): LogObject {
  * 初始化
  *
  * @export
- * @param {InitData} conf
+ * @param {InitConf} conf
  */
-export function init(conf?: InitData): void {
+export function init(conf?: InitConf): void {
   win[WindowLogKey.PRIVATE_KEY] = {
     // default setting
-    disabled: false,
-    prefix: '',
+    disabled: conf?.disabled,
+    prefix: conf?.prefix || '',
     color: Color.BLACK,
     fontSize: FontSize.NORMAL,
     [Level.INFO]: InfoSet,
@@ -120,7 +120,7 @@ export function init(conf?: InitData): void {
     [Level.ERROR]: ErrorSet,
   }
   win.logger = (prefix?: string) => logger(prefix)
-  if (!conf?.unHello) helloFunc()
+  if (!conf?.unHello && !conf?.disabled) helloFunc()
 }
 
 // console.log("%c3D Text"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
