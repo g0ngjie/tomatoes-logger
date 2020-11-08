@@ -2,7 +2,7 @@
   "name": "@tomatoes/logger",
   "version": "1.0.0",
   "description": "log tools",
-  "main": "./lib/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "cd test && yarn serve"
   },
