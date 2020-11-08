@@ -2,7 +2,7 @@
   "name": "@tomatoes/logger",
   "version": "1.0.1",
   "description": "Front end console logging tool",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "build": "tsc && gulp && rm -rf lib/*.d.ts && mv dist/*.d.ts lib && rm -rf dist",
     "test": "cd test && yarn serve"
