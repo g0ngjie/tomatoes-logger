@@ -21,7 +21,8 @@
     "tomatoes"
   ],
   "files": [
-    "/lib"
+    "lib",
+    "types/*.d.ts"
   ],
   "devDependencies": {
     "gulp": "^4.0.2",
