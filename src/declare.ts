@@ -15,5 +15,4 @@ function log(e: Log): void {
 export default function () {
   // log({ title: 'Environment', content: Env.PRO, backgroundColor: Color.LIME })
   log({ title: 'NPM', content: '@tomatoes/logger', backgroundColor: Color.BLUE })
-  console.log('\n')
 }
