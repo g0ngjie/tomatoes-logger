@@ -18,8 +18,7 @@ export enum Level {
  * @enum {string}
  */
 export enum FontSize {
-  MINI = "10px",
-  NORMAL = "13px",
+  NORMAL = "11px",
   LARGE = "15px",
 }
 
@@ -30,12 +29,12 @@ export enum FontSize {
  * @enum {string}
  */
 export enum Color {
-  BLACK = "#000000",
-  GRAY = "#909399",
-  GREEN = "#67C23A",
-  ORANGE = "#E6A23C",
-  RED = "#F56C6C",
-  WHITE = "#FFFFFF",
+  BLACK = "#1f1f1f",
+  GRAY = "#434343",
+  GREEN = "#5b8c00",
+  ORANGE = "#d46b08",
+  RED = "#cf1322",
+  WHITE = "#fafafa",
 }
 
 /**
