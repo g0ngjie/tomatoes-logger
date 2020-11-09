@@ -32,8 +32,8 @@ export enum Color {
   BLACK = "#1f1f1f",
   GRAY = "#434343",
   GREEN = "#5b8c00",
-  ORANGE = "#d46b08",
-  RED = "#cf1322",
+  ORANGE = "#fa8c16",
+  RED = "#ff4d4f",
   WHITE = "#fafafa",
   BLUE = '#1475b2',
   /** log green */

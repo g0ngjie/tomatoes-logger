@@ -1,7 +1,7 @@
 import { Color, FontSize, Level, WindowLogKey } from "./enum";
-import { ConfigLogger, InitConf, LevelLogger, Logger, LogObject } from "./interface";
+import { ConfigLogger, InitConf, LevelLogger, Logger, LogFunc } from "./interface";
 import { InfoSet, DebugSet, WarnSet, ErrorSet } from "./config";
-import helloFunc from "./hello";
+import declare from "./declare";
 
 const win: any = window
 
@@ -53,28 +53,31 @@ function __log(prefix: string = '', msg: any[], level: Level, __this: LevelLogge
     const __fontSize: string = __targetLevel.fontSize || __this.fontSize
     opts = `color:${__color};font-size:${__fontSize}`
   }
-  const _msgArr = [opts]
+  const _msgArr: any[] = [opts]
   let _regStr = ''
   for (let i = 0; i < msg.length; i++) {
     const _msg = msg[i];
     switch (typeof _msg) {
       case 'string':
-        _regStr += `%c%s`
+        _regStr += '%c%s'
         _msgArr.push(opts)
         _msgArr.push(_msg)
         break;
       case 'object':
-        _regStr += '%O'
+      case 'number':
+      case 'boolean':
+      case 'undefined':
+        _regStr += '%o'
         _msgArr.push(_msg)
         break;
       default:
-        _regStr += `%c%s`
+        _regStr += '%c%s'
         _msgArr.push(opts)
         _msgArr.push(_msg)
         break;
     }
   }
-  console.log(`%c${prefix || __this.prefix}${_regStr}`, ..._msgArr)
+  console.log(`%c${prefix || __this[level].prefix || __this.prefix}${_regStr}`, ..._msgArr)
 }
 
 /**空funcion */
@@ -88,7 +91,7 @@ function __toNoneFunc() {
  * @export
  * @param {string} [prefix]
  */
-export default function logger(prefix?: string): LogObject {
+export default function logger(prefix?: string): LogFunc {
   const win: any = window
   const __this: LevelLogger = win[WindowLogKey.PRIVATE_KEY]
   const { INFO, WARN, DEBUG, ERROR } = Level
@@ -134,5 +137,5 @@ export function init(conf?: InitConf): void {
     [Level.ERROR]: ErrorSet,
   }
   win.logger = (prefix?: string) => logger(prefix)
-  if (!conf?.unHello && !conf?.disabled) helloFunc()
+  if (!conf?.unDeclare && !conf?.disabled) declare()
 }

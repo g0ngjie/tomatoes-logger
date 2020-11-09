@@ -14,7 +14,7 @@ export interface LevelLogger extends Logger {
   [Level.ERROR]?: any,
 }
 
-export interface LogObject {
+export interface LogFunc {
   [Level.INFO]: any,
   [Level.DEBUG]?: any,
   [Level.WARN]?: any,
@@ -22,7 +22,7 @@ export interface LogObject {
 }
 
 export interface InitConf {
-  unHello?: boolean,
+  unDeclare?: boolean,
   disabled?: boolean,
   prefix?: string,
 }

@@ -25,7 +25,7 @@ export const ErrorSet: Logger = {
   fontSize: FontSize.NORMAL
 }
 
-export const LevelToArray :string[] = [
+export const LevelToArray: string[] = [
   Level.INFO, Level.DEBUG, Level.WARN, Level.ERROR,
 ]
 
