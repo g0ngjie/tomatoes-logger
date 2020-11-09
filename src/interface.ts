@@ -12,7 +12,6 @@ export interface LevelLogger extends Logger {
   [Level.DEBUG]?: any,
   [Level.WARN]?: any,
   [Level.ERROR]?: any,
-  [Level.IMGAGE]?: any,
 }
 
 export interface LogObject {
@@ -20,7 +19,6 @@ export interface LogObject {
   [Level.DEBUG]?: any,
   [Level.WARN]?: any,
   [Level.ERROR]?: any,
-  [Level.IMGAGE]?: any,
 }
 
 export interface InitConf {

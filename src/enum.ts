@@ -9,7 +9,6 @@ export enum Level {
   DEBUG = 'debug',
   WARN = "warn",
   ERROR = "error",
-  IMGAGE = "image",
 }
 
 /**

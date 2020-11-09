@@ -26,7 +26,7 @@ export const ErrorSet: Logger = {
 }
 
 export const LevelToArray :string[] = [
-  Level.INFO, Level.DEBUG, Level.WARN, Level.ERROR, Level.IMGAGE,
+  Level.INFO, Level.DEBUG, Level.WARN, Level.ERROR,
 ]
 
 export const KeyToLevel: any = {
@@ -34,5 +34,4 @@ export const KeyToLevel: any = {
   [Level.INFO]: [Level.INFO],
   [Level.WARN]: [Level.WARN],
   [Level.ERROR]: [Level.ERROR],
-  [Level.IMGAGE]: [Level.IMGAGE]
 }

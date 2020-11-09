@@ -91,14 +91,13 @@ function __toNoneFunc() {
 export default function logger(prefix?: string): LogObject {
   const win: any = window
   const __this: LevelLogger = win[WindowLogKey.PRIVATE_KEY]
-  const { INFO, WARN, DEBUG, ERROR, IMGAGE } = Level
+  const { INFO, WARN, DEBUG, ERROR } = Level
   if (!__this) {
     return {
       [INFO]: __toNoneFunc,
       [WARN]: __toNoneFunc,
       [DEBUG]: __toNoneFunc,
       [ERROR]: __toNoneFunc,
-      [IMGAGE]: __toNoneFunc,
     }
   }
   return {
@@ -113,9 +112,6 @@ export default function logger(prefix?: string): LogObject {
     },
     [ERROR]: function (...msg: any) {
       __log(prefix, msg, ERROR, __this)
-    },
-    [IMGAGE]: function (...msg: any) {
-      __log(prefix, msg, IMGAGE, __this)
     },
   }
 }
