@@ -1,13 +1,8 @@
-import { Environment as Env } from "./enum";
+import { Environment as Env, Color } from "./enum";
 interface Log {
   title: string,
   content: string,
   backgroundColor: string,
-}
-
-enum Color {
-  BLUE = '#1475b2',
-  GREEN = '#42c02e',
 }
 
 function log(e: Log): void {
@@ -17,7 +12,7 @@ function log(e: Log): void {
 
 /** welcome */
 export default function () {
-  log({ title: 'Environment', content: Env.PRO, backgroundColor: Color.GREEN })
+  log({ title: 'Environment', content: Env.PRO, backgroundColor: Color.LIME })
   log({ title: 'NPM', content: '@tomatoes/logger', backgroundColor: Color.BLUE })
   log({ title: 'Build Date', content: '2020-11-04T05:36:24.439Z', backgroundColor: Color.BLUE })
   console.log('\n')

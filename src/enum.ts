@@ -35,6 +35,9 @@ export enum Color {
   ORANGE = "#d46b08",
   RED = "#cf1322",
   WHITE = "#fafafa",
+  BLUE = '#1475b2',
+  /** log green */
+  LIME = '#42c02e',
 }
 
 export enum Environment {
