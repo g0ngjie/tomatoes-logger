@@ -37,6 +37,11 @@ export enum Color {
   WHITE = "#fafafa",
 }
 
+export enum Environment {
+  DEV = 'development',
+  PRO = 'production',
+}
+
 /**
  * 
  *
@@ -44,5 +49,5 @@ export enum Color {
  * @enum {string}
  */
 export enum WindowLogKey {
-  PRIVATE_KEY = "self_log"
+  PRIVATE_KEY = "SELF_LOG_KEY"
 }
