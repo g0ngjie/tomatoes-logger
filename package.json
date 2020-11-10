@@ -1,6 +1,6 @@
 {
   "name": "@tomatoes/logger",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Lightweight front end logging tool",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
