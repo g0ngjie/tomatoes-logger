@@ -2,9 +2,10 @@
   "name": "@tomatoes/logger",
   "version": "1.0.7",
   "description": "Front end console logging tool",
-  "main": "./lib/index.js",
+  "main": "lib/index.js",
+  "typings": "types/index.d.ts",
   "scripts": {
-    "build": "tsc && gulp && rm -rf lib/*.d.ts && mv dist/*.d.ts lib && rm -rf dist",
+    "build": "tsc && gulp && rm -rf types/*.d.ts && mv dist/*.d.ts types && rm -rf dist",
     "test": "cd test && yarn serve"
   },
   "repository": "git@gitee.com:gjwork/tomatoes-logger.git",
@@ -20,7 +21,8 @@
     "tomatoes"
   ],
   "files": [
-    "/lib"
+    "lib",
+    "types/*.d.ts"
   ],
   "devDependencies": {
     "gulp": "^4.0.2",
