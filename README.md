@@ -10,36 +10,25 @@ $ yarn add @tomatoes/logger
 ## Functions
 ```typescript
 /**
- * Global status
- * @export
- * @param {boolean} bool
- * @returns {(void | string)}
+ * initialization
  */
-export declare function disabled(bool?: boolean): void | string /**errMsg */;
+function init(conf?: InitConf): void;
 /**
  * Configuration
- * @export
- * @param {Level} level
- * @param {Logger} opts
- * @returns {(void | string)}
  */
-export declare function config(level: Level, opts: ConfigLogger): void | string /**errMsg */;
+function config(level: Level, opts: ConfigLogger): void | string /**errMsg */;
+/**
+ * Global status
+ */
+function disabled(bool?: boolean): void | string /**errMsg */;
 /**
  * Clear log
  */
-export declare function clear(): void | string /**errMsg */;
+function clear(): void | string /**errMsg */;
 /**
  * logger
- * @export
- * @param {string} [prefix]
  */
-export default function logger(prefix?: string): LogFunc;
-/**
- * initialization
- * @export
- * @param {InitConf} conf
- */
-export declare function init(conf?: InitConf): void;
+function logger(prefix?: string): LogFunc;
 ```
 
 ## Usage
