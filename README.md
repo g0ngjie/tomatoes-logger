@@ -6,7 +6,6 @@ Lightweight front end logging tool
 ```typescript
 /**
  * Global status
- *
  * @export
  * @param {boolean} bool
  * @returns {(void | string)}
@@ -14,7 +13,6 @@ Lightweight front end logging tool
 export declare function disabled(bool?: boolean): void | string;
 /**
  * Configuration
- *
  * @export
  * @param {Level} level
  * @param {Logger} opts
@@ -27,14 +25,12 @@ export declare function config(level: Level, opts: ConfigLogger): void | string;
 export declare function clear(): "logger not init" | "logger is disabled" | undefined;
 /**
  * logger
- *
  * @export
  * @param {string} [prefix]
  */
 export default function logger(prefix?: string): LogFunc;
 /**
  * initialization
- *
  * @export
  * @param {InitConf} conf
  */
