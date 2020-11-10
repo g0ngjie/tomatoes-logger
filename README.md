@@ -2,7 +2,7 @@
 
 Lightweight front end logging tool
 
-### Functions
+## Functions
 ```typescript
 /**
  * Global status
@@ -41,7 +41,7 @@ export default function logger(prefix?: string): LogFunc;
 export declare function init(conf?: InitConf): void;
 ```
 
-### Usage
+## Usage
 ```javascript
 import logger, { init, config, Enum, disabled } from "@tomatoes/logger";
 
