@@ -10,7 +10,7 @@ Lightweight front end logging tool
  * @param {boolean} bool
  * @returns {(void | string)}
  */
-export declare function disabled(bool?: boolean): void | string;
+export declare function disabled(bool?: boolean): void | string /**errMsg */;
 /**
  * Configuration
  * @export
@@ -18,11 +18,11 @@ export declare function disabled(bool?: boolean): void | string;
  * @param {Logger} opts
  * @returns {(void | string)}
  */
-export declare function config(level: Level, opts: ConfigLogger): void | string;
+export declare function config(level: Level, opts: ConfigLogger): void | string /**errMsg */;
 /**
  * Clear log
  */
-export declare function clear(): "logger not init" | "logger is disabled" | undefined;
+export declare function clear(): void | string /**errMsg */;
 /**
  * logger
  * @export
