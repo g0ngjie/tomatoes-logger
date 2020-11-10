@@ -2,6 +2,11 @@
 
 Lightweight front end logging tool
 
+## Installing
+```javascript
+$ yarn add @tomatoes/logger
+```
+
 ## Functions
 ```typescript
 /**
@@ -55,3 +60,6 @@ logger().info('info')
 logger().info(1)
 logger().info(true)
 ```
+
+## License
+[The MIT License](./LICENSE)
