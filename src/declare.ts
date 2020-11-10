@@ -11,7 +11,9 @@ function log(e: Log): void {
   console.log(...args)
 }
 
-/** welcome */
+/**
+ * 声明
+ */
 export default function () {
   // log({ title: 'Environment', content: Env.PRO, backgroundColor: Color.LIME })
   log({ title: 'NPM', content: '@tomatoes/logger', backgroundColor: Color.BLUE })

@@ -15,10 +15,10 @@ export interface LevelLogger extends Logger {
 }
 
 export interface LogFunc {
-  [Level.INFO]: any,
-  [Level.DEBUG]?: any,
-  [Level.WARN]?: any,
-  [Level.ERROR]?: any,
+  [Level.INFO]?(prefix?: string): void | string,
+  [Level.DEBUG]?(prefix?: string): void | string,
+  [Level.WARN]?(prefix?: string): void | string,
+  [Level.ERROR]?(prefix?: string): void | string,
 }
 
 export interface InitConf {

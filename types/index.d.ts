@@ -18,6 +18,9 @@ export declare function disabled(bool?: boolean): void | string;
  * @returns {(void | string)}
  */
 export declare function config(level: Level, opts: ConfigLogger): void | string;
+/**
+ * 清空日志
+ */
 export declare function clear(): "logger not init" | "logger is disabled" | undefined;
 /**
  * logger

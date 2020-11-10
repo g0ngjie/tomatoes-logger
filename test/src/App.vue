@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import logger, {config} from "../../lib";
+import logger, { config } from "../../lib";
 export default {
   setup() {
     logger().error('error')

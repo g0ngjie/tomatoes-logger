@@ -1,6 +1,7 @@
 import { Color, FontSize, Level } from "./enum";
 import { Logger } from "./interface";
 
+/**默认配置项 */
 export const InfoSet: Logger = {
   disabled: false,
   color: Color.BLACK,

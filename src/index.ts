@@ -36,6 +36,9 @@ export function config(level: Level, opts: ConfigLogger): void | string {
   __this[level] = opts
 }
 
+/**
+ * 清空日志
+ */
 export function clear() {
   const __this: LevelLogger = win[WindowLogKey.PRIVATE_KEY]
   if (!__this) return 'logger not init'
@@ -81,7 +84,7 @@ function __log(prefix: string = '', msg: any[], level: Level, __this: LevelLogge
 }
 
 /**空funcion */
-function __toNoneFunc() {
+function __toNoneFunc(): string {
   return 'logger not init'
 }
 
