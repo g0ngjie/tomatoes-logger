@@ -18,7 +18,9 @@
   "keywords": [
     "logger",
     "front-end",
-    "tomatoes"
+    "weblog",
+    "tomatoes",
+    "front-end logger"
   ],
   "files": [
     "lib",
