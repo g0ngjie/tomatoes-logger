@@ -10,7 +10,7 @@
   },
   "repository": "git@gitee.com:gjwork/tomatoes-logger.git",
   "author": "Gj <gongjie@otosaas.com>",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://gitee.com/gjwork/tomatoes-logger/issues"
   },
