@@ -14,7 +14,7 @@ export * as Enum from './enum'
  * @param {boolean} bool
  * @returns {(void | string)}
  */
-export function disabled(bool: boolean = true): void | string {
+export function disabled(bool: boolean = true): void | string  /**errMsg */ {
   const __this: Logger = win[WindowLogKey.PRIVATE_KEY]
   if (!__this) return 'logger not init'
   __this.disabled = bool
@@ -28,7 +28,7 @@ export function disabled(bool: boolean = true): void | string {
  * @param {Logger} opts
  * @returns {(void | string)}
  */
-export function config(level: Level, opts: ConfigLogger): void | string {
+export function config(level: Level, opts: ConfigLogger): void | string /**errMsg */ {
   const __this: LevelLogger = win[WindowLogKey.PRIVATE_KEY]
   if (!__this) return 'logger not init'
   if (__this.disabled) return 'logger is disabled'
@@ -39,7 +39,7 @@ export function config(level: Level, opts: ConfigLogger): void | string {
 /**
  * 清空日志
  */
-export function clear() {
+export function clear(): void | string /**errMsg */ {
   const __this: LevelLogger = win[WindowLogKey.PRIVATE_KEY]
   if (!__this) return 'logger not init'
   if (__this.disabled) return 'logger is disabled'
@@ -84,9 +84,7 @@ function __log(prefix: string = '', msg: any[], level: Level, __this: LevelLogge
 }
 
 /**空funcion */
-function __toNoneFunc(): string {
-  return 'logger not init'
-}
+function __toNoneFunc(): string { return 'logger not init' }
 
 /**
  * logger

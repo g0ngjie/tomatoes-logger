@@ -8,7 +8,7 @@ export * as Enum from './enum';
  * @param {boolean} bool
  * @returns {(void | string)}
  */
-export declare function disabled(bool?: boolean): void | string;
+export declare function disabled(bool?: boolean): void | string /**errMsg */;
 /**
  * 配置项
  *
@@ -17,11 +17,11 @@ export declare function disabled(bool?: boolean): void | string;
  * @param {Logger} opts
  * @returns {(void | string)}
  */
-export declare function config(level: Level, opts: ConfigLogger): void | string;
+export declare function config(level: Level, opts: ConfigLogger): void | string /**errMsg */;
 /**
  * 清空日志
  */
-export declare function clear(): "logger not init" | "logger is disabled" | undefined;
+export declare function clear(): void | string /**errMsg */;
 /**
  * logger
  *

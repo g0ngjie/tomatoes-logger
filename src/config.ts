@@ -25,14 +25,3 @@ export const ErrorSet: Logger = {
   color: Color.RED,
   fontSize: FontSize.NORMAL
 }
-
-export const LevelToArray: string[] = [
-  Level.INFO, Level.DEBUG, Level.WARN, Level.ERROR,
-]
-
-export const KeyToLevel: any = {
-  [Level.DEBUG]: [Level.DEBUG],
-  [Level.INFO]: [Level.INFO],
-  [Level.WARN]: [Level.WARN],
-  [Level.ERROR]: [Level.ERROR],
-}
