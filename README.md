@@ -62,4 +62,4 @@ logger().info(true)
 ```
 
 ## License
-[The MIT License](./LICENSE)
+[The ISC License](./LICENSE)
