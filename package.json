@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
   "scripts": {
-    "build": "tsc && gulp && rm -rf types/*.d.ts && mv dist/*.d.ts types && rm -rf dist",
+    "build": "./build.sh",
     "test": "cd test && yarn serve"
   },
   "repository": "git@gitee.com:gjwork/tomatoes-logger.git",
