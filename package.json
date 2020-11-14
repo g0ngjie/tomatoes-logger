@@ -8,13 +8,13 @@
     "build": "./build.sh",
     "test": "cd test && yarn serve"
   },
-  "repository": "git@gitee.com:gjwork/tomatoes-logger.git",
-  "author": "Gj <gongjie@otosaas.com>",
+  "repository": "git@github.com:g0ngjie/tomatoes-logger.git",
+  "author": "Gj <gongjie0422@163.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitee.com/gjwork/tomatoes-logger/issues"
+    "url": "https://github.com/g0ngjie/tomatoes-logger/issues"
   },
-  "homepage": "https://gitee.com/gjwork/tomatoes-logger",
+  "homepage": "https://github.com/g0ngjie/tomatoes-logger",
   "keywords": [
     "logger",
     "front-end",
