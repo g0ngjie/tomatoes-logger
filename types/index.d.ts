@@ -1,5 +1,4 @@
-import { Level } from "./enum";
-import { ConfigLogger, InitConf, LogFunc } from "./interface";
+import { ConfigLogger, InitConf, LogFunc, LevelType } from "./interface";
 export * as Enum from './enum';
 /**
  * 全局状态
@@ -13,11 +12,11 @@ export declare function disabled(bool?: boolean): void | string /**errMsg */;
  * 配置项
  *
  * @export
- * @param {Level} level
+ * @param {string} level
  * @param {Logger} opts
  * @returns {(void | string)}
  */
-export declare function config(level: Level, opts: ConfigLogger): void | string /**errMsg */;
+export declare function config(level: LevelType, opts: ConfigLogger): void | string /**errMsg */;
 /**
  * 清空日志
  */

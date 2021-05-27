@@ -1,5 +1,5 @@
 import { Color, FontSize, Level, WindowLogKey } from "./enum";
-import { ConfigLogger, InitConf, LevelLogger, Logger, LogFunc } from "./interface";
+import { ConfigLogger, InitConf, LevelLogger, Logger, LogFunc, LevelType } from "./interface";
 import { InfoSet, DebugSet, WarnSet, ErrorSet } from "./config";
 import declare from "./declare";
 
@@ -24,11 +24,11 @@ export function disabled(bool: boolean = true): void | string  /**errMsg */ {
  * 配置项
  *
  * @export
- * @param {Level} level
+ * @param {string} level
  * @param {Logger} opts
  * @returns {(void | string)}
  */
-export function config(level: Level, opts: ConfigLogger): void | string /**errMsg */ {
+export function config(level: LevelType, opts: ConfigLogger): void | string /**errMsg */ {
   const __this: LevelLogger = win[WindowLogKey.PRIVATE_KEY]
   if (!__this) return 'logger not init'
   if (__this.disabled) return 'logger is disabled'
@@ -46,7 +46,7 @@ export function clear(): void | string /**errMsg */ {
   console.clear()
 }
 
-function __log(prefix: string = '', msg: any[], level: Level, __this: LevelLogger) {
+function __log(prefix: string = '', msg: any[], level: LevelType, __this: LevelLogger) {
   if (__this.disabled) return
   const __targetLevel: Logger = __this[level]
   if (__targetLevel && __targetLevel.disabled) return

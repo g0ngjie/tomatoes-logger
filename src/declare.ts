@@ -1,4 +1,5 @@
 import { Color } from "./enum";
+import { VERSION } from "./version";
 
 interface Log {
   title: string,
@@ -16,5 +17,5 @@ function log(e: Log): void {
  */
 export default function () {
   // log({ title: 'Environment', content: Env.PRO, backgroundColor: Color.LIME })
-  log({ title: 'NPM', content: '@tomatoes/logger', backgroundColor: Color.BLUE })
+  log({ title: 'NPM', content: `@tomatoes/logger ${VERSION}`, backgroundColor: Color.BLUE })
 }

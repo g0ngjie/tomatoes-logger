@@ -28,3 +28,4 @@ export interface ConfigLogger {
     color?: string;
     fontSize?: string;
 }
+export declare type LevelType = 'info' | 'debug' | 'warn' | 'error';

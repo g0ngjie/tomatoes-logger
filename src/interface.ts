@@ -33,3 +33,5 @@ export interface ConfigLogger {
   color?: string,
   fontSize?: string,
 }
+
+export type LevelType = 'info' | 'debug' | 'warn' | 'error'
